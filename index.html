@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Mohini Didi's World 🌸</title>
+<meta name="description" content="A beautiful little world made with love for Mohini Didi 💖">
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+ margin:0;font-family:Arial,sans-serif;color:white;text-align:center;
+ background:linear-gradient(135deg,#160b2e,#52246f,#ed72b7);
+ min-height:100vh
+}
+header{padding:20px;background:#170b2ccc;position:sticky;top:0}
+header h2{margin:0;color:#ffb9ed}
+nav{margin-top:14px}
+nav a{color:white;text-decoration:none;margin:0 10px;font-size:14px}
+.hero{padding:70px 20px 55px}
+.hero .emoji{font-size:65px;animation:float 2s infinite ease-in-out}
+h1{font-size:clamp(42px,8vw,75px);margin:15px 0;color:#ffd3f1}
+p{line-height:1.8}
+.hero p{max-width:600px;margin:15px auto;color:#ffeafa;font-size:18px}
+button,.btn{
+ border:0;border-radius:30px;padding:14px 23px;margin:8px;
+ background:#ff8bd6;color:#35103f;font-size:16px;font-weight:bold;
+ cursor:pointer;text-decoration:none;display:inline-block;
+ transition:.3s
+}
+button:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #ff8bd688}
+section{padding:45px 20px}
+h2{color:#ffd0f0}
+.card{
+ max-width:750px;margin:20px auto;padding:28px;
+ border:1px solid #ffffff55;border-radius:24px;
+ background:#ffffff14;backdrop-filter:blur(8px);
+ box-shadow:0 10px 35px #190b2944
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;max-width:750px;margin:25px auto}
+.tile{padding:25px 10px;background:#ffffff18;border-radius:18px;font-size:35px;transition:.3s}
+.tile:hover{transform:scale(1.05)}
+.tile p{font-size:14px;margin-bottom:0}
+#surprise{display:none;font-size:18px;color:#fff1fa}
+footer{padding:25px;background:#160b2c;color:#f7d9f0}
+@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+</style>
+</head>
+<body>
+<header>
+ <h2>👑 Mohini Didi 💖</h2>
+ <nav>
+  <a href="#home">🏠 Home</a>
+  <a href="#about">🌸 About</a>
+  <a href="#gallery">📸 Gallery</a>
+  <a href="#surprise">💌 Surprise</a>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="emoji">🌷💖🦋</div>
+ <h1>Mohini Didi</h1>
+ <h2>✨ You Are Special ✨</h2>
+ <p>A little website for a wonderful sister.
+ May your life always be filled with happiness,
+ beautiful dreams, and lots of smiles! ❤️</p>
+ <a class="btn" href="#about">🌸 Explore</a>
+ <button onclick="openSurprise()">💌 Open Surprise</button>
+</section>
+
+<section id="about">
+ <div class="card">
+  <h2>🌹 Dear Mohini Didi 🌹</h2>
+  <p>You are a special part of our family.
+  May every new day bring you happiness,
+  success, love, and beautiful memories.</p>
+  <p>Keep smiling, keep shining, and always believe in yourself! ✨</p>
+ </div>
+ <div class="grid">
+  <div class="tile">💖<p>Kind Heart</p></div>
+  <div class="tile">🌟<p>Bright Star</p></div>
+  <div class="tile">🦋<p>Beautiful Soul</p></div>
+  <div class="tile">🌈<p>Happy Vibes</p></div>
+ </div>
+</section>
+
+<section id="gallery">
+ <h2>📸 Happy Moments</h2>
+ <p>Little things that make life beautiful 🌸</p>
+ <div class="grid">
+  <div class="tile">🌅<p>Beautiful Days</p></div>
+  <div class="tile">🌻<p>Keep Growing</p></div>
+  <div class="tile">🎀<p>Sweet Memories</p></div>
+  <div class="tile">🌌<p>Big Dreams</p></div>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>💌 A Special Message</h2>
+  <p id="surprise">Dear Mohini Didi, you deserve all the happiness
+  in the world! Stay blessed, keep smiling, and may all your
+  dreams come true. Love you, Didi! ❤️🌸<br><br>— Made with love by Aman</p>
+  <button onclick="openSurprise()">🎁 Show My Message</button>
+ </div>
+</section>
+</main>
+
+<footer>
+ <h3>💖 Mohini Didi's World 🌸</h3>
+ <p>Made with ❤️ by Aman</p>
+ <p>Keep Smiling Always! ✨</p>
+</footer>
+
+<script>
+function openSurprise(){
+ const message=document.getElementById("surprise");
+ message.style.display="block";
+ message.scrollIntoView({behavior:"smooth",block:"center"});
+ for(let i=0;i<15;i++){
+  const e=document.createElement("span");
+  e.textContent=["💖","🌸","✨","💕"][Math.floor(Math.random()*4)];
+  e.style.cssText=`position:fixed;left:${Math.random()*95}vw;top:-30px;font-size:25px;z-index:99;pointer-events:none;transition:transform 3s,opacity 3s`;
+  document.body.appendChild(e);
+  requestAnimationFrame(()=>{e.style.transform=`translateY(${innerHeight+50}px) rotate(360deg)`;e.style.opacity="0"});
+  setTimeout(()=>e.remove(),3100);
+ }
+}
+</script>
+</body>
+</html>
